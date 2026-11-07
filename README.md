@@ -5,10 +5,11 @@ A lightweight Python project that calculates a person’s Body Mass Index (BMI) 
 ## ✨ Features
 
 - Calculates BMI using the standard formula
-- Validates user input for numbers and positive values
-- Displays a BMI category based on the result
-- Easy to run from the terminal
-- Minimal, beginner-friendly Python project
+- Validates user input for valid numeric values and positive numbers
+- Classifies BMI into standard health categories
+- Includes a clean CLI entry point for interactive use
+- Includes automated tests for core BMI behavior
+- Beginner-friendly and easy to extend
 
 ## 📐 BMI Formula
 
@@ -31,32 +32,41 @@ $$
 
 ### Prerequisites
 
-- Python 3.x installed on your system
+- Python 3.x installed
 - A terminal or command prompt
 
-### Run the project
+### 1) Create a virtual environment
 
-1. Open your terminal in the project directory.
-2. Run:
+```bash
+python -m venv .venv
+```
+
+### 2) Activate it
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3) Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4) Run the project
 
 ```bash
 python app.py
 ```
 
-If you are using a virtual environment:
+## 🧪 Running Tests
+
+This project includes automated tests for the BMI logic.
 
 ```bash
-.venv\Scripts\Activate.ps1
-python app.py
-```
-
-## 🧪 Example
-
-```text
-Enter your weight in kilograms: 70
-Enter your height in meters: 1.75
-Your BMI is:  22.86
-You have a normal weight.
+pytest -q
 ```
 
 ## 📁 Project Structure
@@ -64,6 +74,10 @@ You have a normal weight.
 ```text
 bmi-calc/
 ├── app.py
+├── tests/
+│   └── test_app.py
+├── requirements.txt
+├── .gitignore
 ├── README.md
 └── .venv/
 ```
@@ -74,19 +88,31 @@ The script:
 
 - asks for weight in kilograms
 - asks for height in meters
-- converts the values to floats
-- checks that the values are valid and greater than zero
-- calculates the BMI
-- prints the result and the corresponding category
+- converts values to floats
+- rejects invalid or non-positive input
+- calculates BMI using the formula
+- prints the BMI and its category
+
+The app logic is separated from the CLI entry point so it can be imported and tested cleanly.
+
+## 🧪 Example
+
+```text
+Enter your weight in kilograms: 70
+Enter your height in meters: 1.75
+Your BMI is: 22.86
+You have a normal weight.
+```
 
 ## 🤝 Contributing
 
-This project is simple and beginner-friendly. Feel free to improve it by adding:
+This project is simple and beginner-friendly. You can extend it by adding:
 
 - a better user interface
-- input validation improvements
-- a GUI version
+- improved validation messages
+- GUI support
 - BMI history tracking
+- unit tests for extra edge cases
 
 ## 📜 License
 
