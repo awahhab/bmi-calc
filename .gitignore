@@ -1,0 +1,29 @@
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Virtual environment metadata
+.Python
+
+# Logs
+*.log
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local environment/config
+.env
+.env.*
